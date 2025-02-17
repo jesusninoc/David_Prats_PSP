@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agendar Cita"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etMotivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Motivo de la cita"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/etFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha (YYYY-MM-DD)"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/etHora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora (HH:MM)"
+        android:inputType="time"/>
+
+    <EditText
+        android:id="@+id/etMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del médico"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btnAgendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agendar Cita"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:paddingTop="16dp"/>
+</LinearLayout>

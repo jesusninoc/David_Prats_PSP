@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1aca0caf-9a64-464f-abf0-651eb8b0bbb3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../CitasMedicas/app/src/main/java/com/example/citasmedicas/ApointmentsActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CitasMedicas/app/src/main/java/com/example/citasmedicas/LoginActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CitasMedicas/app/src/main/java/com/example/citasmedicas/RegisterActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CitasMedicas/app/src/main/res/layout/activity_apointments.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CitasMedicas/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CitasMedicas/app/src/main/res/layout/activity_register.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/ClienteRM.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/ClienteSSL.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/Persona.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/ServidorC.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/ServidorRM.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/ServidorSSL.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/SumaI.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/kotlin/SumaR.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Red2/Red2/src/main/resources/privada.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/java/com/example/reservamedica/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/layout/fragment_first.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/layout/fragment_second.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/menu/menu_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/values-land/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/values-v23/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/values-w1240dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/values-w600dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entregaFinal/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redTem/red/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../arrancarProcesos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../arrancarProcesos/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procesos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../procesos/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2tA1df8uZcKQEOVKrB4oLk9gvCO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/David/Documents/GitHub/David_Prats_PSP/ConexionMovilMovil"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1aca0caf-9a64-464f-abf0-651eb8b0bbb3" name="Changes" comment="" />
+      <created>1739780154008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739780154008</updated>
+    </task>
+    <servers />
+  </component>
+</project>

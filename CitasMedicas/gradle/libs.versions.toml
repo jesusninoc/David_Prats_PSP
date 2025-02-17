@@ -1,0 +1,55 @@
+[versions]
+activityComposeVersion = "1.5.1"
+agp = "8.6.0"
+androidxLifecycleLifecycleRuntimeKtx6 = "2.5.1"
+kotlin = "2.1.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.0"
+constraintlayout = "2.2.0"
+googleGmsGoogleServices = "4.4.2"
+firebaseAuth = "23.2.0"
+firebaseFirestoreKtx = "25.1.2"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.8.0"
+composeBom = "2024.04.01"
+runtimeAndroid = "1.7.7"
+foundationLayoutAndroid = "1.7.7"
+material3Android = "1.3.1"
+ui = "1.7.7"
+
+[libraries]
+androidx-activity-compose-v151 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-lifecycle-runtime-ktx-v251-x6 = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycleLifecycleRuntimeKtx6" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3Android" }
+androidx-material3-window-size-class = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3Android" }
+androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeAndroid" }
+androidx-ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "ui" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+androidx-foundation-layout-android = { group = "androidx.compose.foundation", name = "foundation-layout-android", version.ref = "foundationLayoutAndroid" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+

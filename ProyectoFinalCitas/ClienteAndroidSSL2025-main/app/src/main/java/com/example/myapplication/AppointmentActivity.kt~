@@ -1,0 +1,137 @@
+package com.example.myapplication
+
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
+import android.content.Context
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.io.DataInputStream
+import java.io.DataOutputStream
+import java.io.InputStream
+import java.net.SocketException
+import java.security.KeyStore
+import java.security.cert.Certificate
+import java.security.cert.CertificateFactory
+import java.util.*
+import javax.net.ssl.*
+
+
+class AppointmentViewModel(private val context: Context) : ViewModel() {
+    private val db = FirebaseDatabase.getInstance().getReference("citas")
+    private val auth = FirebaseAuth.getInstance() // Para obtener el usuario actual
+
+    fun sendAppointment(
+        motivo: String,
+        fecha: String,
+        hora: String,
+        medico: String,
+        onResponseReceived: (String) -> Unit
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            var cliente: SSLSocket? = null
+            var flujoEntrada: DataInputStream? = null
+            var flujoSalida: DataOutputStream? = null
+
+            try {
+                val host = "192.168.1.70"
+                val puerto = 4000
+
+                val sslSocketFactory = createSSLSocketFactory(context)
+                cliente = sslSocketFactory.createSocket(host, puerto) as SSLSocket
+                cliente.soTimeout = 10000
+
+                cliente.startHandshake()
+                flujoSalida = DataOutputStream(cliente.getOutputStream())
+                flujoEntrada = DataInputStream(cliente.getInputStream())
+
+                val message = "CITA|Medico:$medico|Motivo:$motivo|Fecha:$fecha|Hora:$hora"
+                flujoSalida.writeUTF(message)
+                flujoSalida.flush()
+
+                val serverResponse = flujoEntrada.readUTF()
+
+                if (serverResponse.contains("OK")) {
+                    saveAppointmentToFirebase(motivo, fecha, hora, medico, onResponseReceived)
+                } else {
+                    onResponseReceived("Error del servidor: $serverResponse")
+                }
+
+            } catch (e: Exception) {
+                onResponseReceived("Error en la conexión: ${e.message}")
+            } finally {
+                flujoEntrada?.close()
+                flujoSalida?.close()
+                cliente?.close()
+            }
+        }
+    }
+
+    private fun saveAppointmentToFirebase(
+        motivo: String,
+        fecha: String,
+        hora: String,
+        medico: String,
+        onResponseReceived: (String) -> Unit
+    ) {
+        val userId = auth.currentUser?.uid ?: "Anonimo"  // Si hay usuario autenticado, lo guardamos
+        val citaId = db.push().key ?: return
+
+        val citaData = mapOf(
+            "userId" to userId,
+            "medico" to medico,
+            "motivo" to motivo,
+            "fecha" to fecha,
+            "hora" to hora
+        )
+
+        db.child(citaId).setValue(citaData)
+            .addOnSuccessListener { onResponseReceived("Cita agendada con éxito") }
+            .addOnFailureListener { onResponseReceived("Error al guardar cita en Firebase") }
+    }
+
+    private fun createSSLSocketFactory(context: Context): SSLSocketFactory {
+        try {
+            val certificateFactory = CertificateFactory.getInstance("X.509")
+            val certInputStream: InputStream = context.resources.openRawResource(R.raw.reservas)
+            val certificado: Certificate = certificateFactory.generateCertificate(certInputStream)
+            certInputStream.close()
+
+            val keyStore = KeyStore.getInstance(KeyStore.getDefaultType())
+            keyStore.load(null, null)
+            keyStore.setCertificateEntry("servidor", certificado)
+
+            val trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
+            trustManagerFactory.init(keyStore)
+
+            val sslContext = SSLContext.getInstance("TLSv1.3")
+            sslContext.init(null, trustManagerFactory.trustManagers, null)
+
+            return sslContext.socketFactory
+        } catch (e: Exception) {
+            throw RuntimeException("Error al cargar el certificado en Android: ${e.message}", e)
+        }
+    }
+}
+
